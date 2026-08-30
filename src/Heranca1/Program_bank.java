@@ -48,7 +48,15 @@ public class Program_bank {
         acc10.withDraw(200.0);
         IO.println(acc10.getBalance());
 
+        // POLIMORFISMO (é downcasting e upcasting, eles são tipos de polimorfismo)
 
+        AccountH x = new AccountH(1020, "Alex", 1000.0);
+        AccountH y = new SavingsAccount(1023, "Maria", 1000.0, 0.01);
+        x.withDraw(50.0);
+        y.withDraw(50.0);
+
+        IO.println(x.getBalance());
+        IO.println(y.getBalance());
     }
 
 }
