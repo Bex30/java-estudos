@@ -2,7 +2,7 @@ package Heranca4_Abstract.entities;
 
 import Heranca4_Abstract.entities.enums.Color;
 
-public class CircleAbs extends ShapeAbs {
+public class CircleAbs extends Heranca4_Abstract.entities.ShapeAbs {
     private Double radius;
 
     public CircleAbs() {

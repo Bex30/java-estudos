@@ -2,7 +2,7 @@ package Heranca4_Abstract.entities;
 
 import Heranca4_Abstract.entities.enums.Color;
 
-public class RectangleAbs extends ShapeAbs {
+public class RectangleAbs extends Heranca4_Abstract.entities.ShapeAbs {
     private Double width;
     private Double height;
 
