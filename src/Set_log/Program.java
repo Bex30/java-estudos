@@ -1,9 +1,45 @@
 package Set_log;
 
+import Set_log.entities.LogEntry;
+
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Program {
     static void main(String[] args) {
-        File path = new File("C:\\tmp\\FileJava\\log.txt");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter File Path");
+        String path = sc.nextLine();
+
+        try(BufferedReader br = new BufferedReader(new FileReader(path))){
+            Set<LogEntry> set = new HashSet<>();
+
+           String line = br.readLine();
+           while(line != null){
+               String[] fields = line.split(" ");
+               String username = fields[0];
+               LocalDateTime moment = LocalDateTime.ofInstant(Instant.parse(fields[1]), ZoneOffset.UTC);
+               set.add(new LogEntry(username, moment));
+
+               line = br.readLine();
+
+           }
+            System.out.println("Total users: " + set.size());
+
+
+
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
