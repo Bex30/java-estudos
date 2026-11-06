@@ -2,10 +2,10 @@ package Set_Exercise.entities;
 
 import java.util.Objects;
 
-public class users {
+public class User {
     private int id;
 
-    public users(int id) {
+    public User(int id) {
         this.id = id;
     }
 
@@ -20,7 +20,7 @@ public class users {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        users users = (users) o;
+        User users = (User) o;
         return id == users.id;
     }
 
